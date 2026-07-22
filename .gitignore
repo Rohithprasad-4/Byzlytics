@@ -1,0 +1,38 @@
+# SecureGate AI — .gitignore
+
+# Environment / secrets
+.env
+*.env.local
+
+# Python
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# ML model artifacts (regenerate with ml.generate_dataset + ml.training)
+models/*.pkl
+models/training_dataset.csv
+models/score_range.json
+
+# Generated reports and runtime logs
+reports/output/*.pdf
+logs/*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+.idea/
+
+# Captured/test databases
+*.sqlite3
