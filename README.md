@@ -209,3 +209,7 @@ Base URL `http://localhost:5000`. Every response follows
 - **Dashboard shows no data** — make sure the Flask API is running,
   you've generated some events (`capture.capture --simulate`), and
   you've called `POST /assess` at least once to score them.
+
+## Author
+Gutta Harshill
+RohithPrasad Vagu
