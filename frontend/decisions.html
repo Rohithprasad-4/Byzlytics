@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SecureGate AI — Decision Management</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar">
+    <div class="brand"><span class="shield">🛡</span> SecureGate AI</div>
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="devices.html">Device Analytics</a>
+    <a class="nav-link" href="traffic.html">Traffic Analytics</a>
+    <a class="nav-link" href="security.html">Security Analytics</a>
+    <a class="nav-link active" href="decisions.html">Decision Management</a>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>Decision Management</h1>
+        <div class="subtitle">Priority: always_block &gt; always_allow &gt; block &gt; allow</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="label">Always Allow</div><div class="value green" id="kpi-always-allow">—</div></div>
+      <div class="kpi-card"><div class="label">Always Block</div><div class="value red" id="kpi-always-block">—</div></div>
+      <div class="kpi-card"><div class="label">Active Decisions</div><div class="value" id="kpi-active">—</div></div>
+      <div class="kpi-card"><div class="label">Total Decisions</div><div class="value" id="kpi-total">—</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>Manual Decision</h2>
+      <form id="decision-form" class="form-row">
+        <input type="text" id="form-ip" placeholder="IP address (e.g. 192.168.1.25)" required />
+        <select id="form-action">
+          <option value="allow">Allow</option>
+          <option value="block">Block</option>
+          <option value="always_allow">Always Allow</option>
+          <option value="always_block">Always Block</option>
+        </select>
+        <input type="text" id="form-reason" placeholder="Reason (optional)" />
+        <button type="submit" class="btn primary">Submit</button>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h2>Active Decisions</h2>
+      <table>
+        <thead><tr><th>IP Address</th><th>Action</th><th>Reason</th><th>Decided At</th><th>Actions</th></tr></thead>
+        <tbody id="active-decisions-body">
+          <tr><td colspan="5" class="empty-state loading-dot">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h2>Decision History</h2>
+      <div class="form-row">
+        <input type="text" id="history-ip-filter" placeholder="Filter by IP address" />
+        <button class="btn primary" id="history-filter-btn">Filter</button>
+      </div>
+      <table>
+        <thead><tr><th>IP Address</th><th>Action</th><th>Reason</th><th>Decided At</th><th>Status</th></tr></thead>
+        <tbody id="history-body">
+          <tr><td colspan="5" class="empty-state loading-dot">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/decisions.js"></script>
+</body>
+</html>

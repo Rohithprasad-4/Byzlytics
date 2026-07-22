@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SecureGate AI — Security Analytics</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar">
+    <div class="brand"><span class="shield">🛡</span> SecureGate AI</div>
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="devices.html">Device Analytics</a>
+    <a class="nav-link" href="traffic.html">Traffic Analytics</a>
+    <a class="nav-link active" href="security.html">Security Analytics</a>
+    <a class="nav-link" href="decisions.html">Decision Management</a>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>Security Analytics</h1>
+        <div class="subtitle">Risk assessment results and AI-generated explanations</div>
+      </div>
+      <div>
+        <button class="btn primary" id="run-assessment-btn">Run Assessment</button>
+        <a class="btn primary" id="download-report-btn" href="#">Download Today's Report</a>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="label">High Risk</div><div class="value red" id="kpi-high">—</div></div>
+      <div class="kpi-card"><div class="label">Medium Risk</div><div class="value amber" id="kpi-medium">—</div></div>
+      <div class="kpi-card"><div class="label">Low Risk</div><div class="value green" id="kpi-low">—</div></div>
+      <div class="kpi-card"><div class="label">Avg Risk Score</div><div class="value" id="kpi-avg">—</div></div>
+    </div>
+
+    <div class="chart-grid">
+      <div class="panel">
+        <h2>Risk Distribution</h2>
+        <div class="chart-wrap"><canvas id="chart-risk-donut"></canvas></div>
+      </div>
+      <div class="panel">
+        <h2>Top Risky Devices</h2>
+        <div class="chart-wrap"><canvas id="chart-top-risky"></canvas></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>AI Explanations</h2>
+      <table>
+        <thead><tr><th>Source IP</th><th>Risk</th><th>Explanation</th><th>When</th></tr></thead>
+        <tbody id="explanations-body">
+          <tr><td colspan="4" class="empty-state loading-dot">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h2>Active Decisions</h2>
+      <table>
+        <thead><tr><th>IP Address</th><th>Action</th><th>Reason</th><th>Decided At</th></tr></thead>
+        <tbody id="active-decisions-body">
+          <tr><td colspan="4" class="empty-state loading-dot">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/security.js"></script>
+</body>
+</html>

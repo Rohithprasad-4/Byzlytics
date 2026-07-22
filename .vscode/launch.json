@@ -1,0 +1,54 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "SecureGate: Flask API",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "backend.app",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": true
+    },
+    {
+      "name": "SecureGate: Capture (simulate)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "capture.capture",
+      "args": ["--simulate", "--duration", "120", "--rate", "3"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "SecureGate: Generate ML dataset",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "ml.generate_dataset",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "SecureGate: Train ML model",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "ml.training",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "SecureGate: Init database",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "database.seed",
+      "args": ["--seed"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "name": "SecureGate: Run all tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["tests", "-v"],
+      "console": "integratedTerminal"
+    }
+  ]
+}

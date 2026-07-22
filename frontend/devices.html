@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SecureGate AI — Device Analytics</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar">
+    <div class="brand"><span class="shield">🛡</span> SecureGate AI</div>
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link active" href="devices.html">Device Analytics</a>
+    <a class="nav-link" href="traffic.html">Traffic Analytics</a>
+    <a class="nav-link" href="security.html">Security Analytics</a>
+    <a class="nav-link" href="decisions.html">Decision Management</a>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>Device Analytics</h1>
+        <div class="subtitle">All devices discovered on the LAN</div>
+      </div>
+    </div>
+
+    <div class="kpi-grid">
+      <div class="kpi-card"><div class="label">Total Devices</div><div class="value" id="kpi-total">—</div></div>
+      <div class="kpi-card"><div class="label">Trusted</div><div class="value green" id="kpi-trusted">—</div></div>
+      <div class="kpi-card"><div class="label">Blocked</div><div class="value red" id="kpi-blocked">—</div></div>
+      <div class="kpi-card"><div class="label">New Today</div><div class="value amber" id="kpi-new-today">—</div></div>
+    </div>
+
+    <div class="panel">
+      <h2>All Devices</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>IP Address</th><th>MAC</th><th>Type</th><th>First Seen</th>
+            <th>Last Seen</th><th>Status</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="devices-body">
+          <tr><td colspan="7" class="empty-state loading-dot">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/devices.js"></script>
+</body>
+</html>

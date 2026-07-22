@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SecureGate AI — Traffic Analytics</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <nav class="sidebar">
+    <div class="brand"><span class="shield">🛡</span> SecureGate AI</div>
+    <a class="nav-link" href="index.html">Overview</a>
+    <a class="nav-link" href="devices.html">Device Analytics</a>
+    <a class="nav-link active" href="traffic.html">Traffic Analytics</a>
+    <a class="nav-link" href="security.html">Security Analytics</a>
+    <a class="nav-link" href="decisions.html">Decision Management</a>
+  </nav>
+
+  <main class="main">
+    <div class="page-header">
+      <div>
+        <h1>Traffic Analytics</h1>
+        <div class="subtitle">DNS · TCP · ICMP traffic breakdown</div>
+      </div>
+    </div>
+
+    <div class="chart-grid">
+      <div class="panel">
+        <h2>Protocol Distribution</h2>
+        <div class="chart-wrap"><canvas id="chart-protocol"></canvas></div>
+      </div>
+      <div class="panel">
+        <h2>Hourly Activity (Today)</h2>
+        <div class="chart-wrap"><canvas id="chart-hourly"></canvas></div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h2>7-Day Traffic Trend by Protocol</h2>
+      <div class="chart-wrap"><canvas id="chart-weekly"></canvas></div>
+    </div>
+
+    <div class="panel">
+      <h2>Recent Events</h2>
+      <table>
+        <thead><tr><th>Time</th><th>Protocol</th><th>Source</th><th>Destination</th><th>Risk</th></tr></thead>
+        <tbody id="events-body">
+          <tr><td colspan="5" class="empty-state loading-dot">Loading</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/traffic.js"></script>
+</body>
+</html>
