@@ -17,7 +17,7 @@ capture/    -> pipeline/   -> ml/            -> ai_engine/     -> backend/ (Flas
 ## Project structure
 
 ```
-securegate_ai/
+Byzlytics/
 ├── .env.example          Environment template — copy to .env
 ├── .gitignore
 ├── requirements.txt
@@ -59,7 +59,7 @@ start_project.bat
 
 ### Option B — step by step (recommended the first time, and in VS Code)
 
-1. **Open the folder in VS Code**: `File > Open Folder... > securegate_ai/`.
+1. **Open the folder in VS Code**: `File > Open Folder... > Byzlytics/`.
    The `.vscode/launch.json` already has run configurations for every
    phase — open the Run and Debug panel and pick one, or follow the
    manual steps below in the integrated terminal.
