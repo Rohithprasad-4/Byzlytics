@@ -1,4 +1,4 @@
-# SecureGate AI — AI-Powered Network Security Gateway & Analytics Platform
+# Byzlytics — AI-Powered Network Security Gateway & Analytics Platform
 
 A locally deployable, privacy-preserving LAN security monitor. It captures
 network traffic, scores it for anomalies with an Isolation Forest model,
